@@ -1,0 +1,20 @@
+Section: web
+Priority: optional
+Maintainer: kleong3 <leong3@purdue.edu>
+Source: radarr
+Build-Depends: debhelper (>=9), git
+Standards-Version: 3.9.6
+Homepage: https://github.com/Radarr/Radarr
+XB-Plugin_Section: downloaders
+Vcs-Git: git@github.com:Sonarr/Sonarr.git
+Vcs-Browser: https://github.com/Sonarr/Sonarr
+
+Package: radarr
+Architecture: all
+Depends: sqlite3 (>= 3.7),
+  mediainfo (>= 0.7.52),
+  libmono-cil-dev (>= 3.2),
+  git,
+  readynasos(>=6.1.0),
+  ${misc:Depends}
+Description: Radarr is an independent fork of Sonarr reworked for automatically downloading movies via Usenet and bitTorrent

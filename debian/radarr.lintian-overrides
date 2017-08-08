@@ -1,0 +1,4 @@
+radarr: non-standard-toplevel-dir apps/
+radarr: file-in-unusual-dir apps/radarr/*
+radarr: script-not-executable apps/radarr/*
+radarr: executable-not-elf-or-script apps/radarr/*

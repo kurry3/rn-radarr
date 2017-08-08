@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+export DH_ALWAYS_EXCLUDE=.git
+
+DESTDIR = $(CURDIR)/debian/radarr
+
+%:
+	dh $@
+
+override_dh_install:
+		#chmod +x /etc/init.d/nzbdrone
+		mkdir -p ${DESTDIR}/apps/radarr/config
+		mkdir -p ${DESTDIR}/apps/radarr/bin
+		cp -R $(CURDIR)/rn-files/* ${DESTDIR}/apps/radarr
+		cp -R $(CURDIR)/config/* ${DESTDIR}/apps/radarr/config/
+		mkdir -p $(CURDIR)/git-files
+		#if [ -d ./git-files/.git ]; then git --git-dir=./git-files/.git pull; fi
+		#if [ ! -d ./git-files/.git ]; then git clone -b master https://github.comn/Radarr/Radarr.git ./git-files; fi
+		cp -R $(CURDIR)/git-files/* ${DESTDIR}/apps/radarr/bin/

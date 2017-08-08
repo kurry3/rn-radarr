@@ -1,0 +1,2 @@
+rn-files/* /apps/radarr/
+git-files/* /apps/radarr/bin
