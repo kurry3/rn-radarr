@@ -1,0 +1,15 @@
+[Unit]
+Description=Radarr application instance
+After= syslog.target network.target
+
+[Service]
+User=admin
+Group=admin
+Type=simple
+ExecStart=/usr/bin/mono /apps/radarr/bin/Radarr.exe  -nobrowser --data_dir=/apps/radarr/config --port=7878
+TimeoutStopSec=20
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+<Application resource-id="radarr"><!-- 'resource-id' must be AppName -->
+  <Name>radarr</Name>
+  <Author>kleong3</Author>
+  <Version>1.0.0</Version>
+  <RequireReboot>0</RequireReboot>
+  <ConfigURL/>
+  <LaunchURL>http://localhost:7878/</LaunchURL>
+  <ReservePort>7878</ReservePort>
+  <InfoURL>https://sonarr.tv</InfoURL>
+  <DebianPackage>sonarr</DebianPackage>
+  <ServiceName>fvapp-radarr.service</ServiceName>
+  <Description lang="en-us">A fork of Sonarr reworked for automatically downloading movies via Usenet and BitTorrent</Description>
+</Application>
