@@ -1,5 +1,5 @@
 # rn-radarr
-A package of Radarr for the readyNAS.
+A super sketch package of Radarr for the readyNAS. (I should be puling from the sonarr repo)
 
 <p align="center">
 <img src="/Logo/text256.png" alt="Radarr">
