@@ -1,0 +1,30 @@
+language: mono
+
+mono:
+  - 3.2
+
+dist: jessie
+
+install:
+    -sudo apt-get -qq update
+    -sudo apt-get install -y debhelper dh-autoreconf devscripts
+
+script:
+    -debuild -i -us -uc -b
+
+
+deploy:
+    provider: releases
+    api_key:
+      #i'm not sure if i generated the correct api_key. went to github and just followed the instructions there...doesn't seem as long as it sould me
+      secure: 5bdc3297d0a92caa43655f7a0cb31a9faf74f7da
+    file_glob: true
+    file: radarr_*_all.deb
+    skip cleanup: true
+    on:
+        tags: true
+
+notfications:
+    email:
+        on_success: change
+        on_failure: change
